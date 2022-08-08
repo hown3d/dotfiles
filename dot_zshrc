@@ -1,0 +1,162 @@
+# Fig pre block. Keep at the top of this file.
+#. "$HOME/.fig/shell/zshrc.pre.zsh"
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=1000
+# setopt autocd
+unsetopt beep
+bindkey -e
+
+
+fpath=($ZSH_CACHE_DIR ~/.zsh.d/ $fpath)
+autoload -Uz compinit
+autoload -Uz bashcompinit
+for dump in ~/.zcompdump(N.mh+24); do
+	compinit;
+  bashcompinit;
+done
+compinit -C;
+bashcompinit -C;
+
+export EDITOR=$(which nvim)
+export PATH="$PATH:$HOME/go/bin:$HOME/.cargo/bin:/Users/hoehl/.rd/bin"
+
+export GOPRIVATE="git-codecommit.eu-central-1.amazonaws.com/v1/repos/*"
+
+# Check if zplug is installed
+export ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
+if [[ ! -d $ZINIT_HOME ]]; then
+  git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+  source "${ZINIT_HOME}/zinit.zsh" && zinit self-update
+else
+  source "${ZINIT_HOME}/zinit.zsh" 
+fi
+
+# Self-manage
+# zplug "zplug/zplug", hook-build:"zplug --self-manage"
+zinit light zdharma-continuum/fast-syntax-highlighting
+# zplug "zsh-users/zsh-autosuggestions"
+zinit load "apachler/zsh-aws"
+zinit snippet OMZP::gh
+zinit snippet OMZP::mvn
+zinit snippet OMZP::brew
+zinit snippet OMZP::git
+zinit snippet OMZP::terraform
+zinit snippet OMZP::sudo
+zinit snippet OMZP::fzf
+
+zinit ice as"completion"
+zinit snippet OMZP::rust/_rustc
+
+zinit snippet OMZP::rust
+zinit ice as"completion"
+zinit snippet OMZP::golang/_golang
+zinit snippet OMZP::golang
+# zplug "plugins/gh",   from:oh-my-zsh
+# zplug "plugins/fzf",   from:oh-my-zsh
+# zplug "plugins/mvn",   from:oh-my-zsh
+# zplug "plugins/brew",   from:oh-my-zsh
+# zplug "plugins/git",   from:oh-my-zsh
+# zplug "plugins/terraform",   from:oh-my-zsh
+# # zplug "plugins/zsh-interactive-cd",   from:oh-my-zsh
+# zplug "plugins/sudo",   from:oh-my-zsh
+# zplug "plugins/z",   from:oh-my-zsh
+# zplug "plugins/rust",   from:oh-my-zsh
+# zplug "plugins/go",   from:oh-my-zsh
+zinit load "qoomon/zsh-lazyload"
+zinit load "junegunn/fzf"
+zinit load "changyuheng/fz"
+zinit load "Aloxaf/fzf-tab"
+zinit load "agkozak/zsh-z"
+
+# zplug check || zplug install
+#
+# Then, source plugins and add commands to $PATH
+# zplug load
+
+# Lazyload completions
+#lazyload <command-name command-name ...> -- <load-command>
+lazyload kubectl -- 'source <(kubectl completion zsh)'
+lazyload podman -- 'source <(podman completion zsh)'
+#lazyload docker -- 'source <(docker completion zsh)'
+lazyload gh -- 'source <(gh completion -s zsh)'
+lazyload grype -- 'source <(grype completion zsh)'
+lazyload cue -- 'source <(cue completion zsh)'
+lazyload ko -- 'source <(ko completion zsh)'
+lazyload gcloud -- 'source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
+lazyload aws -- 'complete -C "/usr/local/bin/aws_completer" aws'
+lazyload oci -- 'source "/Users/hoehl/lib/oci_autocomplete.sh"'
+
+# aliases
+# kubectl
+alias k="kubectl"
+# vscode
+alias c="remoteCode"
+alias fedora="limactl shell fedora"
+
+# go beta
+#alias go="/Users/hoehl/sdk/go1.18beta2/bin/go"
+# docker to podman
+#alias docker="podman"
+
+# Move standard ls
+alias ols="ls"
+# Base formats
+alias ls="lsd -A"           # short, multi-line
+alias ll="lsd -1A"          # list, 1 per line
+alias la="lsd -lA"          # list w/ info
+
+# git
+alias gc="git commit -av"
+alias gPr="git pull --rebase"
+alias gP="git pull"
+alias gp="git push"
+
+#lazygit
+alias lg="lazygit"
+# nerdctl
+alias nerdctl="fedora nerdctl"
+
+function gvim {
+  file=$1
+  if [[ $file == "/" ]];then
+    open -a /Applications/goneovim.app --args $file
+  else
+    open -a /Applications/goneovim.app --args $(pwd)/$file
+  fi
+}
+
+function remoteCode {
+  filepath=$(readlink -f $1)
+  code --remote "ssh-remote+lima-docker" $filepath
+}
+
+function md {
+  mdcat $1 | bat
+}
+
+function neovide_fedora {
+  limactl shell fedora killall nvim
+  limactl shell fedora nvim --listen 0.0.0.0:5555 --headless &
+  neovide --remote-tcp localhost:5555
+}
+
+eval "$(starship init zsh)"
+
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+export DOCKER_BUILDKIT=1
+export DOCKER_HOST=unix://$HOME/.lima/docker/sock/docker.sock
+export DOCKER_SOCK=$HOME/.lima/docker/sock/docker.sock
+# export BUILDKIT_HOST="unix:///Users/hoehl/.lima/buildkit/sock/buildkitd.sock"
+
+
+export SDKMAN_DIR="$HOME/.sdkman"
+source "$HOME/.sdkman/bin/sdkman-init.sh"
+export PATH=$PATH:/Users/hoehl/.spicetify
+
+eval $(thefuck --alias)
+    
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+
