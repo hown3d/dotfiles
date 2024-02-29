@@ -1,2 +1,2 @@
-# Hown3d's dotfiles
-Managed with [chezmoi](https://www.chezmoi.io/)
+# my dotfiles
+`chezmoi init github.com/hown3d/dotfiles`

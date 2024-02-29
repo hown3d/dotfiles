@@ -1,0 +1,160 @@
+# ~/.config/starship.toml
+format = """
+$username\
+$hostname\
+$shlvl\
+$kubernetes\
+$directory\
+$git_branch\
+$git_commit\
+$git_state\
+$git_status\
+$hg_branch\
+$docker_context\
+$package\
+$cmake\
+$dart\
+$dotnet\
+$elixir\
+$elm\
+$erlang\
+$golang\
+$helm\
+$java\
+$julia\
+$kotlin\
+$nim\
+$nodejs\
+$ocaml\
+$perl\
+$php\
+$purescript\
+$python\
+$ruby\
+$rust\
+$swift\
+$terraform\
+$vagrant\
+$zig\
+$nix_shell\
+$conda\
+$aws\
+$gcloud\
+$openstack\
+$env_var\
+$crystal\
+$custom\
+$cmd_duration\
+$lua\
+$line_break\
+$jobs\
+$status\
+$character"""
+
+[gcloud]
+disabled = true
+
+[cmd_duration]
+disabled = true
+min_time = 10_000
+
+[kubernetes]
+disabled = false
+style = "blue bold"
+
+[aws.region_aliases]
+eu-central-1 = "euw1"
+
+[helm]
+disabled = true
+
+[aws]
+symbol = " "
+format = 'on [$symbol($profile )(\($region\) )]($style)'
+disabled = true
+
+[conda]
+symbol = " "
+
+[dart]
+symbol = " "
+
+[directory]
+read_only = " "
+
+[docker_context]
+disabled = true
+symbol = " "
+
+[elixir]
+symbol = " "
+
+[elm]
+symbol = " "
+
+[git_branch]
+symbol = " "
+
+[golang]
+symbol = " "
+
+[hg_branch]
+symbol = " "
+
+[java]
+symbol = " "
+
+[julia]
+symbol = " "
+
+[memory_usage]
+symbol = " "
+
+[nim]
+symbol = " "
+
+[nix_shell]
+symbol = " "
+
+[package]
+symbol = " "
+
+[perl]
+symbol = " "
+
+[php]
+symbol = " "
+
+[python]
+symbol = " "
+
+[ruby]
+symbol = " "
+
+[rust]
+symbol = " "
+
+[scala]
+symbol = " "
+
+[shlvl]
+symbol = " "
+
+[swift]
+symbol = "ﯣ "
+
+[custom.leapp]
+command = "leapp session current -i -f alias" # shows output of command
+when = '[ "$STARSHIP_SHELL" == "zsh" ]'
+shell = ["bash", "--noprofile", "--norc"]
+symbol = " "
+disabled = true
+
+[custom.giturl]
+description = "Display symbol for remote Git server"
+command = "check-git-remote"
+when = 'git rev-parse --is-inside-work-tree 2> /dev/null'
+shell = ["bash", "--noprofile", "--norc"]
+style = "bright-yellow bold"
+format = "at [$output]($style) "
+disabled=true
