@@ -12,7 +12,7 @@ set -x TESTCONTAINERS_DOCKER_SOCKET_OVERRIDE /var/run/docker.sock
 set -gx PATH $PATH $HOME/.krew/bin
 set --export EDITOR $(which nvim)
 
-
+fzf_configure_bindings --directory=\cf
 # eval (minikube docker-env)
 
 starship init fish | source
