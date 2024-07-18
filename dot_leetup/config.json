@@ -1,0 +1,11 @@
+{
+    "lang": "go",
+    "pick_hook": {
+        "go": {
+            "working_dir": "/Users/hoehll/private/leetcode/go",
+            "script": {
+                "pre_generation": "cd @leetup=working_dir; mkdir -p @leetup=problem"
+            }
+        }
+    }
+}

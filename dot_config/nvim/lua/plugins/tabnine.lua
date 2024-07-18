@@ -1,0 +1,47 @@
+return {}
+-- local tabnine_host = "https://tabnine.stackit.run"
+-- return {
+--   "codota/tabnine-nvim",
+--   build = "./dl_binaries.sh " .. tabnine_host .. "/update",
+--   opts = {
+--     accept_keymap = "<C-CR>",
+--     dismiss_keymap = "<C-BS>",
+--     disable_auto_comment = true,
+--     debounce_ms = 800,
+--     suggestion_color = { gui = "#808080", cterm = 244 },
+--     codelens_color = { gui = "#808080", cterm = 244 },
+--     codelens_enabled = true,
+--     exclude_filetypes = { "TelescopePrompt", "NvimTree" },
+--     log_file_path = "/Users/hoehll/.local/share/nvim/lazy/tabnine-nvim/log", -- absolute path to Tabnine log file,
+--     tabnine_enterprise_host = tabnine_host,
+--   },
+--   main = "tabnine",
+--   keys = {
+--     {
+--       "<leader>Tf",
+--       mode = { "n", "x" },
+--       "<cmd>TabnineFix<cr>",
+--       desc = "Fix",
+--     },
+--     {
+--       "<leader>Tt",
+--       mode = { "n", "x" },
+--       "<cmd>TabnineTest<cr>",
+--       desc = "Test",
+--     },
+--     {
+--       "<leader>Te",
+--       mode = { "n", "x" },
+--       "<cmd>TabnineExplain<cr>",
+--       desc = "Explain",
+--     },
+--     {
+--       "<leader>Tc",
+--       mode = { "n", "x" },
+--       function()
+--         require("tabnine.chat").open()
+--       end,
+--       desc = "Open TabNine chat",
+--     },
+--   },
+-- }
