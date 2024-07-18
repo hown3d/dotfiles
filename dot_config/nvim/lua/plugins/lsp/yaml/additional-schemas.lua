@@ -1,6 +1,6 @@
 local curl = require("plenary.curl")
 local M = {
-  schemas_catalog = "CodeReaper/CRDs-catalog",
+  schemas_catalog = "datreeio/CRDs-catalog",
   schema_catalog_branch = "main",
   github_base_api_url = "https://api.github.com/repos",
   github_headers = {
