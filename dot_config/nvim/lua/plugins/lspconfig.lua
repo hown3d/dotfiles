@@ -7,9 +7,13 @@ return {
     },
     -- make sure mason installs the server
     servers = {
-      gopls = {
-        gofumpt = false,
-      },
+      -- gopls = {
+      --   settings = {
+      --     gopls = {
+      --       gofumpt = true,
+      --     },
+      --   },
+      -- },
       tilt_ls = {
         mason = false,
         cmd = { "tilt", "lsp", "start" },
