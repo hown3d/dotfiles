@@ -14,8 +14,9 @@ config = {
 	check_for_updates = false,
 	use_fancy_tab_bar = true,
 	tab_bar_at_bottom = true,
-	font_size = 14,
-	font = wezterm.font("FiraCode Nerd Font Mono", { weight = "Bold" }),
+	font_size = 16,
+	font = wezterm.font("FiraCode Nerd Font Mono", { weight = "Medium" }),
+	-- font = wezterm.font("Monaspace Argon Var", { weight = "Regular" }),
 	enable_tab_bar = true,
 	window_padding = {
 		left = 3,
@@ -23,6 +24,10 @@ config = {
 		top = 0,
 		bottom = 0,
 	},
+	inactive_pane_hsb = {
+		brightness = 0.4,
+	},
+
 	background = {
 		{
 			source = {

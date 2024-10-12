@@ -1,14 +1,34 @@
 local wezterm = require("wezterm")
 local config = require("config")
+local config_writer = require("config_writer")
+local theme_picker = require("theme_picker")
+local smart_splits = require("smart_splits")
+local G = config_writer.getLuaFromTOML()
 require("events")
 
--- Apply color scheme based on the WEZTERM_THEME environment variable
-local themes = {
-	nord = "Nord (Gogh)",
-	onedark = "One Dark (Gogh)",
+local scheme = wezterm.color.get_builtin_schemes()[G.colorscheme]
+config.color_scheme = "CustomTheme"
+config.color_schemes = { ["CustomTheme"] = scheme }
+
+config.keys = {
+	{ key = "m", mods = "CMD|CTRL", action = wezterm.action_callback(theme_picker.theme_switcher) },
+	-- This will create a new split and run your default program inside it
+	{
+		key = "Enter",
+		mods = "CMD",
+		action = wezterm.action.SplitHorizontal,
+	},
+	{
+		key = "Enter",
+		mods = "SHIFT|CMD",
+		action = wezterm.action.SplitVertical,
+	},
+	{
+		key = "d",
+		mods = "SHIFT|CMD",
+		action = wezterm.action.CloseCurrentPane({ confirm = true }),
+	},
 }
-local success, stdout, stderr = wezterm.run_child_process({ os.getenv("SHELL"), "-c", "printenv WEZTERM_THEME" })
-local selected_theme = stdout:gsub("%s+", "") -- Remove all whitespace characters including newline
-config.color_scheme = themes[selected_theme]
+smart_splits(config)
 
 return config

@@ -12,6 +12,7 @@ set --export JAVA_HOME "/opt/homebrew/Cellar/openjdk/22.0.1"
 
 set --export VAULT_ADDR "https://vault.eu01.stackit.schwarz"
 set --export VAULT_ENGINE_PATH ske
+set --export WEZTERM_THEME nord
 
 fzf_configure_bindings --directory=\cf
 
