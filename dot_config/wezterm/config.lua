@@ -26,7 +26,7 @@ config = {
 	tab_bar_at_bottom = false,
 	tab_max_width = 64,
 	use_fancy_tab_bar = false,
-	font_size = 16,
+	font_size = 18,
 	-- freetype_load_flags = "NO_HINTING",
 	font = wezterm.font({
 		family = "FiraCode Nerd Font",
@@ -56,12 +56,12 @@ config = {
 	background = {
 		{
 			source = {
-				File = "/Users/hoehll/Pictures/bg_17.png",
+				File = "/Users/hoehll/Pictures/Foto von Ludi, 22. Okt 2024.jpg",
 			},
 			hsb = {
 				hue = 1.0,
-				saturation = 1.02,
-				brightness = 0.25,
+				saturation = 0.9,
+				brightness = 0.15,
 			},
 			width = "100%",
 			height = "100%",

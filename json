@@ -1,0 +1,135 @@
+
+reg.infra.ske.eu01.stackit.cloud/kubernetes/kube-proxy:v1.27.16@sha256:f775c9f86ed22956ceae174ee9474aa8044f2a675b72124d566b7d7ac866b249 (debian 12.5)
+=====================================================================================================================================================
+Total: 20 (UNKNOWN: 0, LOW: 16, MEDIUM: 4, HIGH: 0, CRITICAL: 0)
+
+┌──────────────┬──────────────────┬──────────┬──────────────┬───────────────────┬──────────────────┬──────────────────────────────────────────────────────────────┐
+│   Library    │  Vulnerability   │ Severity │    Status    │ Installed Version │  Fixed Version   │                            Title                             │
+├──────────────┼──────────────────┼──────────┼──────────────┼───────────────────┼──────────────────┼──────────────────────────────────────────────────────────────┤
+│ coreutils    │ CVE-2016-2781    │ LOW      │ will_not_fix │ 9.1-1             │                  │ coreutils: Non-privileged session can escape to the parent   │
+│              │                  │          │              │                   │                  │ session in chroot                                            │
+│              │                  │          │              │                   │                  │ https://avd.aquasec.com/nvd/cve-2016-2781                    │
+│              ├──────────────────┤          ├──────────────┤                   ├──────────────────┼──────────────────────────────────────────────────────────────┤
+│              │ CVE-2017-18018   │          │ affected     │                   │                  │ coreutils: race condition vulnerability in chown and chgrp   │
+│              │                  │          │              │                   │                  │ https://avd.aquasec.com/nvd/cve-2017-18018                   │
+├──────────────┼──────────────────┤          │              ├───────────────────┼──────────────────┼──────────────────────────────────────────────────────────────┤
+│ iptables     │ CVE-2012-2663    │          │              │ 1.8.9-2           │                  │ iptables: --syn flag bypass                                  │
+│              │                  │          │              │                   │                  │ https://avd.aquasec.com/nvd/cve-2012-2663                    │
+├──────────────┼──────────────────┤          │              ├───────────────────┼──────────────────┼──────────────────────────────────────────────────────────────┤
+│ libc6        │ CVE-2010-4756    │          │              │ 2.36-9+deb12u7    │                  │ glibc: glob implementation can cause excessive CPU and       │
+│              │                  │          │              │                   │                  │ memory consumption due to...                                 │
+│              │                  │          │              │                   │                  │ https://avd.aquasec.com/nvd/cve-2010-4756                    │
+│              ├──────────────────┤          │              │                   ├──────────────────┼──────────────────────────────────────────────────────────────┤
+│              │ CVE-2018-20796   │          │              │                   │                  │ glibc: uncontrolled recursion in function                    │
+│              │                  │          │              │                   │                  │ check_dst_limits_calc_pos_1 in posix/regexec.c               │
+│              │                  │          │              │                   │                  │ https://avd.aquasec.com/nvd/cve-2018-20796                   │
+│              ├──────────────────┤          │              │                   ├──────────────────┼──────────────────────────────────────────────────────────────┤
+│              │ CVE-2019-1010022 │          │              │                   │                  │ glibc: stack guard protection bypass                         │
+│              │                  │          │              │                   │                  │ https://avd.aquasec.com/nvd/cve-2019-1010022                 │
+│              ├──────────────────┤          │              │                   ├──────────────────┼──────────────────────────────────────────────────────────────┤
+│              │ CVE-2019-1010023 │          │              │                   │                  │ glibc: running ldd on malicious ELF leads to code execution  │
+│              │                  │          │              │                   │                  │ because of...                                                │
+│              │                  │          │              │                   │                  │ https://avd.aquasec.com/nvd/cve-2019-1010023                 │
+│              ├──────────────────┤          │              │                   ├──────────────────┼──────────────────────────────────────────────────────────────┤
+│              │ CVE-2019-1010024 │          │              │                   │                  │ glibc: ASLR bypass using cache of thread stack and heap      │
+│              │                  │          │              │                   │                  │ https://avd.aquasec.com/nvd/cve-2019-1010024                 │
+│              ├──────────────────┤          │              │                   ├──────────────────┼──────────────────────────────────────────────────────────────┤
+│              │ CVE-2019-1010025 │          │              │                   │                  │ glibc: information disclosure of heap addresses of           │
+│              │                  │          │              │                   │                  │ pthread_created thread                                       │
+│              │                  │          │              │                   │                  │ https://avd.aquasec.com/nvd/cve-2019-1010025                 │
+│              ├──────────────────┤          │              │                   ├──────────────────┼──────────────────────────────────────────────────────────────┤
+│              │ CVE-2019-9192    │          │              │                   │                  │ glibc: uncontrolled recursion in function                    │
+│              │                  │          │              │                   │                  │ check_dst_limits_calc_pos_1 in posix/regexec.c               │
+│              │                  │          │              │                   │                  │ https://avd.aquasec.com/nvd/cve-2019-9192                    │
+├──────────────┼──────────────────┤          │              ├───────────────────┼──────────────────┼──────────────────────────────────────────────────────────────┤
+│ libip4tc2    │ CVE-2012-2663    │          │              │ 1.8.9-2           │                  │ iptables: --syn flag bypass                                  │
+│              │                  │          │              │                   │                  │ https://avd.aquasec.com/nvd/cve-2012-2663                    │
+├──────────────┤                  │          │              │                   ├──────────────────┤                                                              │
+│ libip6tc2    │                  │          │              │                   │                  │                                                              │
+│              │                  │          │              │                   │                  │                                                              │
+├──────────────┼──────────────────┤          │              ├───────────────────┼──────────────────┼──────────────────────────────────────────────────────────────┤
+│ libjansson4  │ CVE-2020-36325   │          │              │ 2.14-2            │                  │ jansson: out-of-bounds read in json_loads() due to a parsing │
+│              │                  │          │              │                   │                  │ error                                                        │
+│              │                  │          │              │                   │                  │ https://avd.aquasec.com/nvd/cve-2020-36325                   │
+├──────────────┼──────────────────┼──────────┼──────────────┼───────────────────┼──────────────────┼──────────────────────────────────────────────────────────────┤
+│ libssl3      │ CVE-2024-4603    │ MEDIUM   │ fixed        │ 3.0.13-1~deb12u1  │ 3.0.14-1~deb12u1 │ openssl: Excessive time spent checking DSA keys and          │
+│              │                  │          │              │                   │                  │ parameters                                                   │
+│              │                  │          │              │                   │                  │ https://avd.aquasec.com/nvd/cve-2024-4603                    │
+│              ├──────────────────┤          │              │                   │                  ├──────────────────────────────────────────────────────────────┤
+│              │ CVE-2024-4741    │          │              │                   │                  │ openssl: Use After Free with SSL_free_buffers                │
+│              │                  │          │              │                   │                  │ https://avd.aquasec.com/nvd/cve-2024-4741                    │
+│              ├──────────────────┤          ├──────────────┤                   ├──────────────────┼──────────────────────────────────────────────────────────────┤
+│              │ CVE-2024-5535    │          │ fix_deferred │                   │                  │ openssl: SSL_select_next_proto buffer overread               │
+│              │                  │          │              │                   │                  │ https://avd.aquasec.com/nvd/cve-2024-5535                    │
+│              ├──────────────────┤          ├──────────────┤                   ├──────────────────┼──────────────────────────────────────────────────────────────┤
+│              │ CVE-2024-6119    │          │ fixed        │                   │ 3.0.14-1~deb12u2 │ openssl: Possible denial of service in X.509 name checks     │
+│              │                  │          │              │                   │                  │ https://avd.aquasec.com/nvd/cve-2024-6119                    │
+│              ├──────────────────┼──────────┤              │                   ├──────────────────┼──────────────────────────────────────────────────────────────┤
+│              │ CVE-2024-2511    │ LOW      │              │                   │ 3.0.14-1~deb12u1 │ openssl: Unbounded memory growth with session handling in    │
+│              │                  │          │              │                   │                  │ TLSv1.3                                                      │
+│              │                  │          │              │                   │                  │ https://avd.aquasec.com/nvd/cve-2024-2511                    │
+│              ├──────────────────┤          ├──────────────┤                   ├──────────────────┼──────────────────────────────────────────────────────────────┤
+│              │ CVE-2024-9143    │          │ fix_deferred │                   │                  │ openssl: Low-level invalid GF(2^m) parameters lead to OOB    │
+│              │                  │          │              │                   │                  │ memory access                                                │
+│              │                  │          │              │                   │                  │ https://avd.aquasec.com/nvd/cve-2024-9143                    │
+├──────────────┼──────────────────┤          ├──────────────┼───────────────────┼──────────────────┼──────────────────────────────────────────────────────────────┤
+│ libxtables12 │ CVE-2012-2663    │          │ affected     │ 1.8.9-2           │                  │ iptables: --syn flag bypass                                  │
+│              │                  │          │              │                   │                  │ https://avd.aquasec.com/nvd/cve-2012-2663                    │
+└──────────────┴──────────────────┴──────────┴──────────────┴───────────────────┴──────────────────┴──────────────────────────────────────────────────────────────┘
+
+go-runner (gobinary)
+====================
+Total: 3 (UNKNOWN: 0, LOW: 0, MEDIUM: 2, HIGH: 1, CRITICAL: 0)
+
+┌─────────┬────────────────┬──────────┬────────┬───────────────────┬────────────────┬─────────────────────────────────────────────────────────────┐
+│ Library │ Vulnerability  │ Severity │ Status │ Installed Version │ Fixed Version  │                            Title                            │
+├─────────┼────────────────┼──────────┼────────┼───────────────────┼────────────────┼─────────────────────────────────────────────────────────────┤
+│ stdlib  │ CVE-2024-34156 │ HIGH     │ fixed  │ 1.22.5            │ 1.22.7, 1.23.1 │ encoding/gob: golang: Calling Decoder.Decode on a message   │
+│         │                │          │        │                   │                │ which contains deeply nested structures...                  │
+│         │                │          │        │                   │                │ https://avd.aquasec.com/nvd/cve-2024-34156                  │
+│         ├────────────────┼──────────┤        │                   │                ├─────────────────────────────────────────────────────────────┤
+│         │ CVE-2024-34155 │ MEDIUM   │        │                   │                │ go/parser: golang: Calling any of the Parse functions       │
+│         │                │          │        │                   │                │ containing deeply nested literals...                        │
+│         │                │          │        │                   │                │ https://avd.aquasec.com/nvd/cve-2024-34155                  │
+│         ├────────────────┤          │        │                   │                ├─────────────────────────────────────────────────────────────┤
+│         │ CVE-2024-34158 │          │        │                   │                │ go/build/constraint: golang: Calling Parse on a "// +build" │
+│         │                │          │        │                   │                │ build tag line with...                                      │
+│         │                │          │        │                   │                │ https://avd.aquasec.com/nvd/cve-2024-34158                  │
+└─────────┴────────────────┴──────────┴────────┴───────────────────┴────────────────┴─────────────────────────────────────────────────────────────┘
+
+usr/local/bin/kube-proxy (gobinary)
+===================================
+Total: 8 (UNKNOWN: 0, LOW: 1, MEDIUM: 2, HIGH: 5, CRITICAL: 0)
+
+┌──────────────────────────────────────────────────────────────┬────────────────┬──────────┬────────┬─────────────────────┬────────────────────┬─────────────────────────────────────────────────────────────┐
+│                           Library                            │ Vulnerability  │ Severity │ Status │  Installed Version  │   Fixed Version    │                            Title                            │
+├──────────────────────────────────────────────────────────────┼────────────────┼──────────┼────────┼─────────────────────┼────────────────────┼─────────────────────────────────────────────────────────────┤
+│ github.com/docker/distribution                               │ CVE-2023-2253  │ HIGH     │ fixed  │ v2.8.1+incompatible │ 2.8.2-beta.1       │ distribution/distribution: DoS from malicious API request   │
+│                                                              │                │          │        │                     │                    │ https://avd.aquasec.com/nvd/cve-2023-2253                   │
+├──────────────────────────────────────────────────────────────┼────────────────┤          │        ├─────────────────────┼────────────────────┼─────────────────────────────────────────────────────────────┤
+│ github.com/opencontainers/runc                               │ CVE-2024-21626 │          │        │ v1.1.6              │ 1.1.12             │ runc: file descriptor leak                                  │
+│                                                              │                │          │        │                     │                    │ https://avd.aquasec.com/nvd/cve-2024-21626                  │
+│                                                              ├────────────────┼──────────┤        │                     ├────────────────────┼─────────────────────────────────────────────────────────────┤
+│                                                              │ CVE-2024-45310 │ LOW      │        │                     │ 1.1.14, 1.2.0-rc.3 │ runc: runc can be tricked into creating empty               │
+│                                                              │                │          │        │                     │                    │ files/directories on host                                   │
+│                                                              │                │          │        │                     │                    │ https://avd.aquasec.com/nvd/cve-2024-45310                  │
+├──────────────────────────────────────────────────────────────┼────────────────┼──────────┤        ├─────────────────────┼────────────────────┼─────────────────────────────────────────────────────────────┤
+│ go.opentelemetry.io/contrib/instrumentation/google.golang.o- │ CVE-2023-47108 │ HIGH     │        │ v0.35.0             │ 0.46.0             │ opentelemetry-go-contrib: DoS vulnerability in otelgrpc due │
+│ rg/grpc/otelgrpc                                             │                │          │        │                     │                    │ to unbound cardinality metrics                              │
+│                                                              │                │          │        │                     │                    │ https://avd.aquasec.com/nvd/cve-2023-47108                  │
+├──────────────────────────────────────────────────────────────┼────────────────┤          │        ├─────────────────────┼────────────────────┼─────────────────────────────────────────────────────────────┤
+│ go.opentelemetry.io/contrib/instrumentation/net/http/otelht- │ CVE-2023-45142 │          │        │ v0.35.1             │ 0.44.0             │ opentelemetry: DoS vulnerability in otelhttp                │
+│ tp                                                           │                │          │        │                     │                    │ https://avd.aquasec.com/nvd/cve-2023-45142                  │
+├──────────────────────────────────────────────────────────────┼────────────────┤          │        ├─────────────────────┼────────────────────┼─────────────────────────────────────────────────────────────┤
+│ stdlib                                                       │ CVE-2024-34156 │          │        │ 1.22.5              │ 1.22.7, 1.23.1     │ encoding/gob: golang: Calling Decoder.Decode on a message   │
+│                                                              │                │          │        │                     │                    │ which contains deeply nested structures...                  │
+│                                                              │                │          │        │                     │                    │ https://avd.aquasec.com/nvd/cve-2024-34156                  │
+│                                                              ├────────────────┼──────────┤        │                     │                    ├─────────────────────────────────────────────────────────────┤
+│                                                              │ CVE-2024-34155 │ MEDIUM   │        │                     │                    │ go/parser: golang: Calling any of the Parse functions       │
+│                                                              │                │          │        │                     │                    │ containing deeply nested literals...                        │
+│                                                              │                │          │        │                     │                    │ https://avd.aquasec.com/nvd/cve-2024-34155                  │
+│                                                              ├────────────────┤          │        │                     │                    ├─────────────────────────────────────────────────────────────┤
+│                                                              │ CVE-2024-34158 │          │        │                     │                    │ go/build/constraint: golang: Calling Parse on a "// +build" │
+│                                                              │                │          │        │                     │                    │ build tag line with...                                      │
+│                                                              │                │          │        │                     │                    │ https://avd.aquasec.com/nvd/cve-2024-34158                  │
+└──────────────────────────────────────────────────────────────┴────────────────┴──────────┴────────┴─────────────────────┴────────────────────┴─────────────────────────────────────────────────────────────┘

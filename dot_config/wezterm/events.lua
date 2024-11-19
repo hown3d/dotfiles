@@ -170,6 +170,15 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
 	local proc = fs.basename(tab.active_pane.foreground_process_name)
 	if proc == "nvim" then
 		icon = nerdfonts.custom_neovim .. " " .. title
+	-- elseif proc == "k9s" then
+	-- 	local kubeconfig_path = assert(os.getenv("KUBECONFIG"))
+	-- 	local file = assert(io.open(kubeconfig_path, "r"))
+	-- 	local yaml = file:read("a")
+	-- 	file:close()
+	-- 	local kubeconfig = wezterm.serde.yaml_decode(yaml)
+	-- 	icon = nerdfonts.md_kubernetes .. kubeconfig.current_context .. " "
+	elseif proc ~= fs.basename(os.getenv("SHELL")) then
+		icon = icon .. proc .. " "
 	end
 
 	-- Add copy icon

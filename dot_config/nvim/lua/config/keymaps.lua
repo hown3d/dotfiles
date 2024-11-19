@@ -3,6 +3,8 @@ vim.keymap.set("n", "<leader>cq", function()
 end, { desc = "Select yaml schema" })
 
 vim.keymap.set("n", "<leader>ee", "<CMD>Oil<CR>", { desc = "Open parent directory" })
+-- find marks
+vim.keymap.set("n", "<leader>fm", "<CMD>Telescope marks<CR>", { desc = "Find marks" })
 
 -- Telescope integrations
 vim.keymap.set("n", "<leader>xx", function()

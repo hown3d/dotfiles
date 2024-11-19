@@ -6,6 +6,7 @@ vim.o.expandtab = true -- Pressing the TAB key will insert spaces instead of a T
 vim.o.softtabstop = 2 -- Number of spaces inserted instead of a TAB character
 vim.o.shiftwidth = 2 -- Number of spaces inserted when indenting
 vim.opt.wrap = true
+vim.g.lazyvim_picker = "telescope"
 
 if vim.g.neovide then
   -- Put anything you want to happen only in Neovide here
