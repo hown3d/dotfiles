@@ -38,7 +38,6 @@ alias gtd='gardenctl target --garden dev'
 alias gtt='gardenctl target --garden tst'
 alias gtp='gardenctl target --garden prd'
 alias gg='eval $(history | grep -E "gardenctl target|g target|gtp|gtd|gtt|gt --garden" | grep -v history | uniq | fzf --height 40% --info inline --border --preview-window up,1,border-horizontal)'
-alias kubeconfig='export KUBECONFIG=$HOME/.kube/configs/$(ls $HOME/.kube/configs | fzf --preview="bat $HOME/.kube/configs/{}")'
 alias o="openstack"
 alias os="o server"
 alias oss="os show"
