@@ -53,20 +53,20 @@ config = {
 		brightness = 0.4,
 	},
 
-	background = {
-		{
-			source = {
-				File = "/Users/hoehll/Pictures/Foto von Ludi, 22. Okt 2024.jpg",
-			},
-			hsb = {
-				hue = 1.0,
-				saturation = 0.9,
-				brightness = 0.15,
-			},
-			width = "100%",
-			height = "100%",
-		},
-	},
+	-- background = {
+	-- 	{
+	-- 		source = {
+	-- 			File = "/Users/hoehll/Pictures/Foto von Ludi, 22. Okt 2024.jpg",
+	-- 		},
+	-- 		hsb = {
+	-- 			hue = 1.0,
+	-- 			saturation = 0.9,
+	-- 			brightness = 0.15,
+	-- 		},
+	-- 		width = "100%",
+	-- 		height = "100%",
+	-- 	},
+	-- },
 	hyperlink_rules = wezterm.default_hyperlink_rules(),
 	keys = {
 		{ key = "m", mods = "CMD|CTRL", action = wezterm.action_callback(theme_picker.theme_switcher) },
