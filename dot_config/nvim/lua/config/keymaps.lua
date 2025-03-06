@@ -3,8 +3,6 @@ vim.keymap.set("n", "<leader>cq", function()
 end, { desc = "Select yaml schema" })
 
 vim.keymap.set("n", "<leader>ee", "<CMD>Oil<CR>", { desc = "Open parent directory" })
--- find marks
-vim.keymap.set("n", "<leader>fm", "<CMD>Telescope marks<CR>", { desc = "Find marks" })
 
 -- Telescope integrations
 vim.keymap.set("n", "<leader>xx", function()
@@ -17,6 +15,9 @@ end, { desc = "Buffer Diagnostics" })
 
 vim.keymap.set("n", "<leader>xT", "<CMD>TodoTelescope<CR>", { desc = "Todo/Fixme/Note" })
 vim.keymap.set("n", "<leader>xt", "<CMD>TodoTelescope keywords=TODO<CR>", { desc = "Todo" })
+vim.keymap.set("n", "<leader>fG", function()
+  require("telescope.builtin").git_status()
+end, { desc = "Git status" })
 vim.keymap.set(
   "n",
   "<leader>fw",
