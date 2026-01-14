@@ -2,12 +2,27 @@ local theme_picker = require("theme_picker")
 local wezterm = require("wezterm")
 local nerdfonts = wezterm.nerdfonts
 local config = {}
-local config_writer = require("config_writer")
-local G = config_writer.getLuaFromTOML()
-local scheme = wezterm.color.get_builtin_schemes()[G.colorscheme]
+-- local config_writer = require("config_writer")
+-- local G = config_writer.getLuaFromTOML()
+-- local scheme = wezterm.color.get_builtin_schemes()[G.colorscheme]
 
 if wezterm.config_builder then
 	config = wezterm.config_builder()
+end
+
+local function get_appearance()
+	if wezterm.gui then
+		return wezterm.gui.get_appearance()
+	end
+	return "Dark"
+end
+
+local function scheme_for_appearance(appearance)
+	if appearance:find("Dark") then
+		return "Gruvbox Material (Gogh)"
+	else
+		return "Gruvbox Light"
+	end
 end
 
 config = {
@@ -17,15 +32,14 @@ config = {
 	adjust_window_size_when_changing_font_size = false,
 	window_decorations = "RESIZE",
 	check_for_updates = false,
-	-- use_fancy_tab_bar = true,
-	-- config.enable_tab_bar = true
 	hide_tab_bar_if_only_one_tab = false,
 	show_new_tab_button_in_tab_bar = false,
 	show_tab_index_in_tab_bar = true,
 	status_update_interval = 1000,
 	tab_bar_at_bottom = false,
 	tab_max_width = 64,
-	use_fancy_tab_bar = false,
+	use_fancy_tab_bar = true,
+	scrollback_lines = 1000,
 	font_size = 18,
 	-- freetype_load_flags = "NO_HINTING",
 	font = wezterm.font({
@@ -89,8 +103,11 @@ config = {
 	},
 }
 
-config.color_scheme = "CustomTheme"
-config.color_schemes = { ["CustomTheme"] = scheme }
 require("smart_splits")(config)
+-- config.color_scheme = "CustomTheme"
+-- config.color_schemes = { ["CustomTheme"] = scheme }
+config.color_scheme = scheme_for_appearance(get_appearance())
+local bar = wezterm.plugin.require("https://github.com/adriankarlen/bar.wezterm")
+bar.apply_to_config(config)
 
 return config

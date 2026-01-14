@@ -1,0 +1,38 @@
+return {
+  -- "https://codeberg.org/esensar/nvim-dev-container",
+  -- dependencies = "nvim-treesitter/nvim-treesitter",
+  -- opts = {
+  --   container_runtime = "docker",
+  --   autocommands = {
+  --     -- can be set to true to automatically start containers when devcontainer.json is available
+  --     init = true,
+  --     -- can be set to true to automatically remove any started containers and any built images when exiting vim
+  --     clean = false,
+  --     -- can be set to true to automatically restart containers when devcontainer.json file is updated
+  --     update = true,
+  --   },
+  --   attach_mounts = {
+  --     neovim_config = {
+  --       -- enables mounting local config to /root/.config/nvim in container
+  --       enabled = true,
+  --       options = {},
+  --     },
+  --     neovim_data = {
+  --       -- enables mounting local data to /root/.local/share/nvim in container
+  --       enabled = false,
+  --       -- no options by default
+  --       options = {},
+  --     },
+  --     -- Only useful if using neovim 0.8.0+
+  --     neovim_state = {
+  --       -- enables mounting local state to /root/.local/state/nvim in container
+  --       enabled = true,
+  --       -- no options by default
+  --       options = {},
+  --     },
+  --   },
+  --   always_mount = {
+  --     "source=devcontainer_nvim_share,target=/root/.local/share/nvim",
+  --   },
+  -- },
+}

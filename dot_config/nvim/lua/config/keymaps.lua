@@ -4,26 +4,13 @@ end, { desc = "Select yaml schema" })
 
 vim.keymap.set("n", "<leader>ee", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 
--- Telescope integrations
-vim.keymap.set("n", "<leader>xx", function()
-  require("telescope.builtin").diagnostics({ line_width = "full", sort_by = "severity" })
-end, { desc = "Diagnostics" })
-
-vim.keymap.set("n", "<leader>xX", function()
-  require("telescope.builtin").diagnostics({ bufnr = 0, sort_by = "severity" })
-end, { desc = "Buffer Diagnostics" })
-
-vim.keymap.set("n", "<leader>xT", "<CMD>TodoTelescope<CR>", { desc = "Todo/Fixme/Note" })
-vim.keymap.set("n", "<leader>xt", "<CMD>TodoTelescope keywords=TODO<CR>", { desc = "Todo" })
-vim.keymap.set("n", "<leader>fG", function()
-  require("telescope.builtin").git_status()
-end, { desc = "Git status" })
-vim.keymap.set(
-  "n",
-  "<leader>fw",
-  "<CMD>Telescope current_buffer_fuzzy_find<CR>",
-  { desc = "Find word in current buffer" }
-)
+vim.keymap.set("v", "<leader>sR", function()
+  local grug = require("grug-far")
+  grug.with_visual_selection({
+    transient = true,
+    prefills = { paths = vim.fn.expand("%") },
+  })
+end, { desc = "Search and replace in current buffer" })
 
 -- recommended mappings
 -- resizing splits

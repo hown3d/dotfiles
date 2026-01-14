@@ -6,9 +6,6 @@ return {
     },
   },
   {
-    "rebelot/kanagawa.nvim",
-  },
-  {
     "ellisonleao/gruvbox.nvim",
     config = true,
     opts = function(_, opts)
@@ -24,28 +21,28 @@ return {
     "neanias/everforest-nvim",
     version = false,
     lazy = false,
-    config = function(_, opts)
-      require("everforest").setup(opts)
-    end,
-    opts = {
-      transparent_background_level = 2,
-      on_highlights = function(hl, palette)
-        -- The default highlights for TSBoolean is linked to `Purple` which is fg
-        -- purple and bg none. If we want to just add a bold style to the existing,
-        -- we need to have the existing *and* the bold style. (We could link to
-        -- `PurpleBold` here otherwise.)
-        hl.CurrentWord = { bg = palette.bg4, bold = true }
-      end,
-    },
+    -- config = function(_, opts)
+    --   require("everforest").setup(opts)
+    -- end,
+    -- opts = {
+    --   on_highlights = function(hl, palette)
+    --     -- The default highlights for TSBoolean is linked to `Purple` which is fg
+    --     -- purple and bg none. If we want to just add a bold style to the existing,
+    --     -- we need to have the existing *and* the bold style. (We could link to
+    --     -- `PurpleBold` here otherwise.)
+    --     hl.CurrentWord = { bg = palette.bg4, bold = true }
+    --   end,
+    -- },
   },
   {
     "sainnhe/gruvbox-material",
     lazy = false,
+    branch = "master",
   },
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "everforest",
+      colorscheme = "gruvbox-material",
     },
   },
 }

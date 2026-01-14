@@ -13,16 +13,17 @@ set --export VAULT_ADDR "https://vault.eu01.stackit.schwarz"
 set --export VAULT_ENGINE_PATH ske
 set --export WEZTERM_THEME nord
 
+set LESSPIPE $(which src-hilite-lesspipe.sh)
+set --export LESSOPEN "| $LESSPIPE %s"
+set --export LESS ' -R -X -F '
 set --export GOPATH $(go env GOPATH)
 set --export EDITOR $(which nvim)
 fzf_configure_bindings --directory=\cf
-
 
 alias kubectx="kubectl ctx"
 alias kubens="kubectl ns"
 alias lg="lazygit"
 alias k="kubectl "
-
 
 gardenctl completion fish | source
 gardenctl rc fish -p gctl | source
@@ -37,6 +38,7 @@ alias gt='gardenctl target'
 alias gtd='gardenctl target --garden dev'
 alias gtt='gardenctl target --garden tst'
 alias gtp='gardenctl target --garden prd'
+alias gto='gardenctl target --garden ondemand'
 alias gg='eval $(history | grep -E "gardenctl target|g target|gtp|gtd|gtt|gt --garden" | grep -v history | uniq | fzf --height 40% --info inline --border --preview-window up,1,border-horizontal)'
 alias o="openstack"
 alias os="o server"
@@ -46,7 +48,11 @@ alias ovs="ov show"
 alias ova="ov attachment"
 alias oval="ova list"
 
+kubectl completion fish | source
 stackit completion fish | source
+
+fzf --fish | source
+fzf_completion_setup
 
 direnv hook fish | source
 

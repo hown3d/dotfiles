@@ -3,10 +3,6 @@ local mux = wezterm.mux
 local nerdfonts = wezterm.nerdfonts
 local fs = require("utils.fs")
 
-wezterm.on("gui-startup", function()
-	local _, _, window = mux.spawn_window({})
-	window:gui_window():maximize()
-end)
 -- Events update status
 wezterm.on("update-status", function(window, pane)
 	local config = window:effective_config()
