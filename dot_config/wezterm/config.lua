@@ -83,6 +83,11 @@ config = {
 	-- },
 	hyperlink_rules = wezterm.default_hyperlink_rules(),
 	keys = {
+		{
+			key = "w",
+			mods = "SHIFT|CMD",
+			action = wezterm.action_callback(require("tabs").close_all_but_current),
+		},
 		{ key = "m", mods = "CMD|CTRL", action = wezterm.action_callback(theme_picker.theme_switcher) },
 		-- This will create a new split and run your default program inside it
 		{

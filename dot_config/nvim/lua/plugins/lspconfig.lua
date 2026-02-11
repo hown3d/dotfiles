@@ -6,6 +6,9 @@ return {
     },
     -- make sure mason installs the server
     servers = {
+      gopls = {
+        gofumpt = false,
+      },
       yamlls = {
         settings = {
           yaml = {

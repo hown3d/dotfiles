@@ -4,7 +4,7 @@ end, { desc = "Select yaml schema" })
 
 vim.keymap.set("n", "<leader>ee", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 
-vim.keymap.set("v", "<leader>sR", function()
+vim.keymap.set({ "v", "n" }, "<leader>sR", function()
   local grug = require("grug-far")
   grug.with_visual_selection({
     transient = true,

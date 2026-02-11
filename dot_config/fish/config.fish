@@ -9,9 +9,13 @@ set --export --prepend PATH /opt/homebrew/opt/grep/libexec/gnubin
 set --export --prepend PATH /opt/homebrew/opt/coreutils/libexec/gnubin
 set -gx PATH $PATH $HOME/.krew/bin
 
+set --export CARGO_TARGET_AARCH64_UNKNOWN_LINUX_GNU_LINKER aarch64-linux-gnu-gcc
+set --export CC_aarch64_unknown_linux_gnu aarch64-linux-gnu-gcc
+set --export CXX_aarch64_unknown_linux_gnu aarch64-linux-gnu-g++
+set --export AR_aarch64_unknown_linux_gnu aarch64-linux-gnu-ar
+
 set --export VAULT_ADDR "https://vault.eu01.stackit.schwarz"
 set --export VAULT_ENGINE_PATH ske
-set --export WEZTERM_THEME nord
 
 set LESSPIPE $(which src-hilite-lesspipe.sh)
 set --export LESSOPEN "| $LESSPIPE %s"
