@@ -38,6 +38,9 @@ return {
     "sainnhe/gruvbox-material",
     lazy = false,
     branch = "master",
+    config = function()
+      vim.g.gruvbox_material_transparent_background = true
+    end,
   },
   {
     "LazyVim/LazyVim",

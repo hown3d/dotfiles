@@ -43,6 +43,7 @@ alias gtd='gardenctl target --garden dev'
 alias gtt='gardenctl target --garden tst'
 alias gtp='gardenctl target --garden prd'
 alias gto='gardenctl target --garden ondemand'
+alias gtl='gardenctl target --garden local'
 alias gg='eval $(history | grep -E "gardenctl target|g target|gtp|gtd|gtt|gt --garden" | grep -v history | uniq | fzf --height 40% --info inline --border --preview-window up,1,border-horizontal)'
 alias o="openstack"
 alias os="o server"
@@ -51,9 +52,13 @@ alias ov="o volume --os-volume-api-version 3.50"
 alias ovs="ov show"
 alias ova="ov attachment"
 alias oval="ova list"
+alias kkc="kindkubeconfig"
+alias watch="viddy"
 
 kubectl completion fish | source
+kind completion fish | source
 stackit completion fish | source
+gh completion --shell fish | source
 
 fzf --fish | source
 fzf_completion_setup

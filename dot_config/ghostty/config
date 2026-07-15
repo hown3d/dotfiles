@@ -1,0 +1,17 @@
+shell-integration = fish
+
+theme = dark:Gruvbox Dark,light:Apple System Colors Light
+
+# typography
+font-family = Bitstream Vera Sans Mono
+font-size=16
+font-thicken=true
+font-thicken-strength=1
+adjust-cell-height=1
+
+macos-option-as-alt = left
+
+# TERM problem
+shell-integration-features = ssh-terminfo,ssh-env
+
+background-opacity = 0.97

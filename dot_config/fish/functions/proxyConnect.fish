@@ -3,7 +3,7 @@ function __readSSHHosts
 end
 
 function __proxyConnect -a name
-    set socket_file  "/tmp/.ssh-$name"
+    set socket_file "/tmp/.ssh-$name"
     if test -e $socket_file
         echo "$name SSH Proxy already connected"
     else
@@ -13,16 +13,16 @@ function __proxyConnect -a name
 end
 
 function __ssh_forward_port -a name
-  grep -A 10 "Host $name" $HOME/.ssh/config | grep "DynamicForward" | head -n1 | \sed 's/^ *//' | cut -d ' ' -f2
+    grep -A 10 "Host $name" $HOME/.ssh/config | grep DynamicForward | head -n1 | \sed 's/^ *//' | cut -d ' ' -f2
 end
 
-function __subshell -a name 
-  set port (__ssh_forward_port $name)
-  set --export http_proxy socks5://127.0.0.1:$port
-  set --export HTTP_PROXY $http_proxy
-  set --export https_proxy $http_proxy
-  set --export HTTPS_PROXY $http_proxy
-  exec $SHELL
+function __subshell -a name
+    set port (__ssh_forward_port $name)
+    set --export http_proxy socks5h://127.0.0.1:$port
+    set --export HTTP_PROXY $http_proxy
+    set --export https_proxy $http_proxy
+    set --export HTTPS_PROXY $http_proxy
+    exec $SHELL
 end
 
 function __jumphosts -a filter

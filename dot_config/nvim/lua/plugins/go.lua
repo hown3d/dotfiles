@@ -51,5 +51,15 @@ return {
   },
   {
     "nvim-contrib/nvim-ginkgo",
+    commit = "9c8b6bf31f4e0c498ad3cf3ee54ea0df27aa1766",
+  },
+  {
+    "stevearc/conform.nvim",
+    optional = true,
+    opts = {
+      formatters_by_ft = {
+        go = { "goimports" },
+      },
+    },
   },
 }
