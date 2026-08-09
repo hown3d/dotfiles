@@ -60,6 +60,8 @@ kind completion fish | source
 stackit completion fish | source
 gh completion --shell fish | source
 
+bind \cz 'fg 2>/dev/null; commandline -f repaint'
+
 fzf --fish | source
 fzf_completion_setup
 
