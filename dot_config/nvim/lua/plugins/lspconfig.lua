@@ -7,7 +7,13 @@ return {
     -- make sure mason installs the server
     servers = {
       gopls = {
-        gofumpt = false,
+        settings = {
+          gopls = {
+            gofumpt = false,
+            staticcheck = false,
+            expandWorkspaceToModule = false,
+          },
+        },
       },
       yamlls = {
         settings = {

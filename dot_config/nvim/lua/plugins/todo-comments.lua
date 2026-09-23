@@ -1,5 +1,3 @@
-local pattern = [[\b(KEYWORDS)(\([^)]*\))?:]]
-
 return {
   "folke/todo-comments.nvim",
   opts = {
@@ -9,5 +7,10 @@ return {
     search = {
       pattern = [[\b(KEYWORDS)(?:\(.+\))?\s*:]],
     },
+  },
+  keys = {
+    -- disable trouble keymaps
+    { "<leader>xT", false },
+    { "<leader>xt", false },
   },
 }
