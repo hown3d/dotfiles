@@ -22,7 +22,6 @@ set --export LESSOPEN "| $LESSPIPE %s"
 set --export LESS ' -R -X -F '
 set --export GOPATH $(go env GOPATH)
 set --export EDITOR $(which nvim)
-fzf_configure_bindings --directory=\cf
 
 alias kubectx="kubectl ctx"
 alias kubens="kubectl ns"
@@ -64,6 +63,7 @@ bind \cz 'fg 2>/dev/null; commandline -f repaint'
 
 fzf --fish | source
 fzf_completion_setup
+fzf_configure_bindings --directory=\cf
 
 direnv hook fish | source
 
